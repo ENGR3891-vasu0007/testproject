@@ -2,13 +2,15 @@
     <?php
     include 'user_register_login.php';
     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+        echo "inside if";
         // Redirect user to activity page
         if ($_SESSION["usertype"] == 3) {
-            header('Location: user.php');
+            echo "user"; header('Location: user.php');
         } else {
-            header('Location: moduleManage.php');
+            echo "admin"; header('Location: moduleManage.php');
         }
     }
+    echo "welcome"
     ?>
 
     <head>
@@ -36,21 +38,8 @@
                             To obtain access, make sure you enrol to the topic and contact topic coordinators to activate
                             your account.
                         </h1>
-                        <?php
-                        $url="";
-                        if ($_SESSION["usertype"] == 3) {
-                            $url="userDataPage.php";
-                            #header('Location: user.php');
-                        } elseif ($_SESSION["usertype"] == 1) {
-                            $url="userDataPage.php";
-                        }
-                         else {
-
-                            #header('Location: moduleManage.php');
-                        }
-                        ?>
                         <form class="form-group" method="post" name="user_login_submit"
-                              action="<?php echo $url; ?>" autocomplete="off"
+                              action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" autocomplete="off"
                               id="user_login">
                             <input type="text" placeholder="Username" class="Uname" value="<?php echo $Lusername ?>" name="Lusername"
                                    onselectstart="return false" onpaste="return false;" onCopy="return false"
