@@ -10,7 +10,6 @@
             header('Location: moduleManage.php');
         }
     }
-    die;
     ?>
 
     <head>
