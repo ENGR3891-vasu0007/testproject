@@ -1,5 +1,9 @@
 <html>
     <?php
+    error_reporting(E_ALL | E_WARNING | E_NOTICE); 
+    ini_set('display_errors', TRUE); 
+    flush();
+    header("Location: http://www.google.com/"); die('should have redirected by now');
     include 'user_register_login.php';
     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         echo "inside if";
