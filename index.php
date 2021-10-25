@@ -2,6 +2,7 @@
     <?php
     error_reporting(E_ALL | E_WARNING | E_NOTICE); 
     ini_set('display_errors', TRUE); 
+    header_remove();
     flush();
     header("Location: http://www.google.com/"); die('should have redirected by now');
     include 'user_register_login.php';
