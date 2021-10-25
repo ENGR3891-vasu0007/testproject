@@ -2,7 +2,6 @@
     <?php
     include 'user_register_login.php';
     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-        echo "inside if"; die;
         // Redirect user to activity page
         if ($_SESSION["usertype"] == 3) {
             header('Location: user.php');
@@ -38,7 +37,7 @@
                             your account.
                         </h1>
                         <form class="form-group" method="post" name="user_login_submit"
-                              action="userDataPage.php" autocomplete="off"
+                              action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" autocomplete="off"
                               id="user_login">
                             <input type="text" placeholder="Username" class="Uname" value="<?php echo $Lusername ?>" name="Lusername"
                                    onselectstart="return false" onpaste="return false;" onCopy="return false"
