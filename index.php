@@ -1,7 +1,9 @@
 <html>
     <?php
     include 'user_register_login.php';
+    echo "welcome";
     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+        echo "inside if"; die;
         // Redirect user to activity page
         if ($_SESSION["usertype"] == 3) {
             header('Location: user.php');
@@ -9,6 +11,7 @@
             header('Location: moduleManage.php');
         }
     }
+    die;
     ?>
 
     <head>
