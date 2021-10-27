@@ -1,6 +1,7 @@
 <html>
     <?php
     include 'user_register_login.php';
+    echo "welcome";
     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         // Redirect user to activity page
         if ($_SESSION["usertype"] == 3) {
