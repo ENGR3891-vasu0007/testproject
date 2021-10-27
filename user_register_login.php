@@ -108,16 +108,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register_submit'])) {
         }
         $conn->close();
         echo "SESSION[usertype] = " . $_SESSION["usertype"];
-       
-    }
-    }
-}
- if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+       if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         // Redirect user to activity page
         if ($_SESSION["usertype"] == 3) {
             header('Location: user.php');
         } else {
             header('Location: moduleManage.php');
         }
+    }
+    }
+}
+
 ?>
 
