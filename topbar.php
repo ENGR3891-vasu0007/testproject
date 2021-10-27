@@ -2,6 +2,14 @@
 session_start();
 date_default_timezone_set('Australia/Adelaide');
 include 'user_register_login.php';
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+            // Redirect user to activity page
+            if ($_SESSION["usertype"] == 3) {
+                header('Location: user.php');
+            } else {
+                header('Location: moduleManage.php');
+            }
+        }
 ?>
 <html>
     <head>
