@@ -10,6 +10,8 @@
     }
     include 'user_register_login.php';
     echo "welcome";
+    echo "SESSION[usertype] = " . $_SESSION["usertype"];
+
     
     ?>
 
